@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+/*COLOR PALETTE:*/
+/* https: //coolors.co/9b5de5-f15bb5-fee440-00bbf9-00f5d4 */
+
+
+:root {
+  --bg-1: blue;
+    --blue: #1e90ff;
+      --white: #ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html{
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(253, 244, 227);
+}
+
+/* ACCUEILBANNIERE */
+
+.AccueilBanniere{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)), url("../Images/AccueilBanniereBackground4.jpg");
+  background-size: cover;
+}
+
+.AccueilBanniereTitre{
+  height: 330px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.AccueilBanniereTitre .titre{
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+
+}
+
+.AccueilBanniereTitre .soustitre {
+  color: rgb(243, 243, 253)
+}
+
+.AccueilCarrousel{
+
+}
+
+.CarrouselBanniere{
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.itemCarousel {
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+
+}
+
+
+
+.coinName-itemCarousel{
+  font-size: 22px;
+}
+
+.itemCarousel * {
+  /* filter: drop-shadow(3px 5px 4px #cbcbce); */
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+.itemCarousel:hover *{
+  /* filter: drop-shadow(3px 5px 4px #cbcbce); */
+  transform: translateY(-8px);
+  transition: all 0.5s;
+}
+
+.infoAndChart{
+display:flex;
+flex-direction: column;
+justify-content: start;
+align-items: stretch;
+
+}
+
+
+.infoPart{
+  /* flex: auto; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid grey;
+}
+
+.chartPart {
+  /*  flex: auto; */
+  width: 100%;
+}
+
+
+@media all and (min-width: 700px) {
+  .infoAndChart {
+    flex-direction: row;
+  }
+
+  .infoPart {
+    width: 30%;
+  }
+
+  .chartPart {
+    width: 70%;
+  }
+}
+
+
+/* CHART */
+.chartDiv{
+  padding: 1rem;
+}
+
+.checkBoxes{
+  display:flex;
+  justify-content: center;
+}
+
+.chartButtonDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media all and (min-width: 1200px) {
+  .chartButtonDiv {
+    flex-direction: row;
+  
+  }
+}
+
+.checkBoxes{
+  margin-right: 2rem;
+  display: flex;
+}
+
+.chartButtonDiv .button{
+  margin: 1rem;
+}
+.chartButtonDiv .buttonSelected{
+  margin: 1rem;
+  background-color: #00bbf9;
+  color: #FEE440
+}
+
+.chartButtonDiv .button:hover{
+  background-color: #00bbf9;
+  color:#FEE440
+}
+
+
+/* COMPARAISON PAGE */
+
+.selectsDiv{
+  margin: 2rem 0;
+  display:flex;
+  justify-content: space-around;
+}
+
+.descriptionCoin{
+  text-align: justify;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.descriptionCoin:hover {
+  color: darkgrey;
+}

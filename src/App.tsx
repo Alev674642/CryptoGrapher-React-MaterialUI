@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from "@mui/material";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./Styles/App.css";
+import Header from "./Components/Header";
+import CoinPage from "./Pages/CoinPage";
+import Accueil from "./Pages/Accueil";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import AppContext from "./Utils/AppContext";
+import ComparaisonPage from "./Pages/ComparaisonPage";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext>
+      <ThemeProvider theme={darkTheme}>
+        <BrowserRouter>
+          <div className='App'>
+            <Header></Header>
+            <Routes>
+              <Route path='/' element={<Accueil />} />
+              <Route path='/coin/:id' element={<CoinPage />} />
+              <Route path='/comparaison/' element={<ComparaisonPage />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </ThemeProvider>
+    </AppContext>
   );
 }
 
