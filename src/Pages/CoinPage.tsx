@@ -123,7 +123,6 @@ export default function CoinPage() {
       <div className='chartPart'>
         <ChartCoin datasCoin={datas}></ChartCoin>
       </div>
-      //Dialog
       <Dialog
         open={openDialog}
         TransitionComponent={Transition}
