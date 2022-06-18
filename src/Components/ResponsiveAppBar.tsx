@@ -11,37 +11,23 @@ import MenuItem from "@mui/material/MenuItem";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import {
   FormControl,
-  InputLabel,
   Select,
   SelectChangeEvent,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import AppContext, { appContext } from "../Utils/AppContext";
-
-const pages = ["Comparaison"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { appContext } from "../Utils/AppContext";
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -186,6 +172,7 @@ const ResponsiveAppBar = () => {
               </Select>{" "}
             </FormControl>
           )}
+          {/* Par simplicité, le choix de la currency n'est pas possible sur les petits écrans */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Select
               labelId='demo-simple-select-label'
@@ -195,42 +182,12 @@ const ResponsiveAppBar = () => {
               onChange={handleChange}
               size='small'
               style={{
-                /* height: 30, */
-                marginRight: 14 /* color: "white" */,
+                marginRight: 14 ,
               }}>
               <MenuItem value='USD'>USD</MenuItem>
               <MenuItem value='EUR'>EUR</MenuItem>
             </Select>
           </Box>
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title='Open settings'>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id='menu-appbar'
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}>
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign='center'>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

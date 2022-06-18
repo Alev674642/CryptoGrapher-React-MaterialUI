@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
-
 /*COLOR PALETTE:*/
 /* https: //coolors.co/9b5de5-f15bb5-fee440-00bbf9-00f5d4 */
-
 
 :root {
   --bg-1: blue;
@@ -58,10 +55,6 @@ a{
   color: rgb(243, 243, 253)
 }
 
-.AccueilCarrousel{
-
-}
-
 .CarrouselBanniere{
   height: 50%;
   display: flex;
@@ -75,8 +68,6 @@ a{
   margin-left: 2rem;
 
 }
-
-
 
 .coinName-itemCarousel{
   font-size: 22px;
@@ -102,7 +93,6 @@ align-items: stretch;
 
 }
 
-
 .infoPart{
   /* flex: auto; */
   width: 100%;
@@ -116,7 +106,6 @@ align-items: stretch;
   /*  flex: auto; */
   width: 100%;
 }
-
 
 @media all and (min-width: 700px) {
   .infoAndChart {
@@ -132,8 +121,8 @@ align-items: stretch;
   }
 }
 
-
 /* CHART */
+
 .chartDiv{
   padding: 1rem;
 }
@@ -174,7 +163,6 @@ align-items: stretch;
   background-color: #00bbf9;
   color:#FEE440
 }
-
 
 /* COMPARAISON PAGE */
 

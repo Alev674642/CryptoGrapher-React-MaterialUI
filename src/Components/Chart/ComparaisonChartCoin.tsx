@@ -1,6 +1,6 @@
-import { CircularProgress, FormControlLabel, FormGroup } from "@mui/material";
+import { CircularProgress} from "@mui/material";
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -18,12 +18,6 @@ import { appContext } from "../../Utils/AppContext";
 import { ICoinNameId } from "../../Types/SingleCoinTypes";
 import { chartPeriodes } from "../../Config/ChartPeriodes";
 import "../../Styles/App.css";
-
-interface IShowGraph {
-  price: boolean;
-  marketcap: boolean;
-  volume: boolean;
-}
 
 const options = {
   responsive: true,
@@ -64,7 +58,6 @@ const options = {
 };
 
 const yAxis = ["y", "y1", "y2", "y3", "y4", "y5"];
-let yAxisIndex = 0;
 const colorsLine = ["#00bbf9", "red", "orange", "white", "lightgrey", "pink"];
 
 export default function ComparaisonChartCoin({
@@ -198,10 +191,6 @@ export default function ComparaisonChartCoin({
     };
     return data;
   };
-
-  /*   const handleChangeCheckBox = (arg: IShowGraph) => {
-    setShowGrap(arg);
-  }; */
 
   if (!datasChart || Object.keys(datasChart).length === 0) {
     return <CircularProgress />;

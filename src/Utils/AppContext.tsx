@@ -1,8 +1,6 @@
 import axios from "axios";
-import { stringify } from "querystring";
 import React, { createContext, useEffect, useState } from "react";
 import { CoinList } from "../Config/ApiConfig";
-import { ICoinNameId } from "../Types/SingleCoinTypes";
 
 export type IAppContext = {
   currentCurrency: string;

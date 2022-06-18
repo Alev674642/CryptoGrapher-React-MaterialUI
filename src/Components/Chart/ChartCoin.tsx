@@ -19,7 +19,6 @@ import { DatasSingleCoin } from "../../Types/SingleCoinTypes";
 import { chartPeriodes } from "../../Config/ChartPeriodes";
 import "../../Styles/App.css";
 import Checkbox from "@mui/material/Checkbox";
-import { ShowChart } from "@mui/icons-material";
 
 interface IShowGraph {
   price: boolean;

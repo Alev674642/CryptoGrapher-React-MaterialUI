@@ -22,6 +22,7 @@ import { Container } from "@mui/system";
 export default function ComparaisonPage() {
   const context = useContext(appContext);
   const [localListCoin, setLocalListCoin] = useState<ICoinNameId[]>([]);
+  //Tableau de boolean décrivant les états de chaques checkBox
   const [localCheckStateListCoin, setLocalCheckStateListCoin] = useState<
     boolean[]
   >(Array.from({ length: 100 }, (x, i) => (i === 0 ? true : false)));
@@ -31,21 +32,10 @@ export default function ComparaisonPage() {
   ]);
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
-  const handleChangeListCoins = () => {};
   const [openAlert, setOpenAlert] = React.useState(false);
   const [openAlertNumberCharts, setOpenAlertNumberCharts] =
     React.useState(false);
   const [countCharts, setCountCharts] = useState(1);
-
-  //localListcoin est initialement vide, peut etre du au fetch async du context
-  /*   useEffect(() => {
-    setIsLoading(true);
-    setLocalListCoin(context.listCoins);
-    setLocalCheckStateListCoin(
-      localListCoin.map((item) => (item.id === "bitcoin" ? true : false))
-    );
-    setIsLoading(false);
-  }, []); */
 
   //quand le fetch du context est réalisé, on rappelle les méthodes set
   useEffect(() => {

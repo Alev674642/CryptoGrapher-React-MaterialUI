@@ -10,11 +10,9 @@ import {
   Pagination,
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
-import { Container, flexbox } from "@mui/system";
-import axios from "axios";
+import { Container } from "@mui/system";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CoinList } from "../../Config/ApiConfig";
 import { appContext } from "../../Utils/AppContext";
 
 export const formatNumber = function (num: number) {
@@ -31,6 +29,8 @@ export default function TableauDevises() {
   const [pagePagingation, setPagePagingation] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
 
+  //Pourquoi useState pour longueurTableau?
+  //Actuellement longueurTableau est fixe, mais éventuellement sera modifiable par l'utilisateur
   const [longueurTableau, setLongueurTableau] = useState(15);
 
   const context = useContext(appContext);

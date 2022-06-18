@@ -1,6 +1,5 @@
-import { height } from "@mui/system";
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import { TrendingCoins } from "../../Config/ApiConfig";
@@ -27,9 +26,6 @@ export default function CarrouselBanniere() {
         // handle error
         console.log(error);
       })
-      .then(function () {
-        // always executed
-      });
   };
 
   useEffect(() => {
@@ -48,12 +44,6 @@ export default function CarrouselBanniere() {
       <Link key={key} to={`/coin/${coin.id}`}>
         <div
           className='itemCarousel'
-          /* style={{
-            border: "0px solid #3f85b4",
-            margin: "0 3rem",
-            borderRadius: "0.5rem",
-            background: "#00000080",
-          }} */
         >
           <p className='coinName-itemCarousel'>{coin.name}</p>
           <p style={{ fontSize: 18 }}>
@@ -82,9 +72,6 @@ export default function CarrouselBanniere() {
 
   return (
     <div className='CarrouselBanniere'>
-      {/*  {trendingCoins.map((item, key) => {
-        return <div style={{ margin: "0 1rem" }}>{`${item.id} `}</div>;
-      })} */}
       <AliceCarousel
         mouseTracking
         infinite
